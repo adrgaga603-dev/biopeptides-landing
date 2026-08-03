@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programa médico de manejo de peso con valoración | BIOPEPTIDES</title>
+<meta name="description" content="No es solo cuestión de voluntad, y el primer paso no tiene que ser complicado. Descubre si eres candidato/a a una evaluación médica de manejo de peso.">
+<meta name="robots" content="noindex">
+
+<!--
+  L2 — landing generada por meta_landing para el Batch 3 (Campaña 1: Captura de tendencia).
+  L1 (../LANDING-TIRZEPATIDA/ad-safe/index.html) fue escrita para los ganchos de B1 y no hacía
+  message match con B3 -- ver knowledge-base/WORK_LOG.md y .claude/skills/meta_ads/state/batches.json
+  (notas del batch 3). Esta landing SI parafrasea los 4 ganchos de B3 (ver Hero + bloque de
+  mecanismo + bloque de mito/realidad + microcopy del paso 1). Registro completo en
+  .claude/skills/meta_landing/state/landings.json (id: L2).
+  No nombra el farmaco ni sus principios activos, no muestra cifras de resultado como
+  estadistica destacada, no usa formato de testimonio atribuido. Ver knowledge-base/META_POLICY.md.
+
+  META PIXEL (ID 1077623300002423) — mismo pixel de cuenta que la landing detallada y L1.
+  El evento "Lead" se dispara al llegar a la pantalla de resultado del quiz.
+
+  PENDIENTE: foto de Hero. Los 4 conceptos visuales de B3 (meta_designer/prompts/B3.md) todavia
+  no se han generado como archivos de imagen reales -- el mas indicado para Hero es B3-3
+  (puerta abierta + pasillo desenfocado, VAR_B3-3_puerta-abierta-pasillo), coherente con la
+  promesa de "el primer paso es solo una conversacion". Por ahora el Hero es solo texto,
+  sin foto, para no referenciar un archivo que no existe. Agregar la imagen real aqui en
+  cuanto el usuario la genere en Gemini.
+-->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1077623300002423');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1077623300002423&ev=PageView&noscript=1"/></noscript>
+
+<style>
+  @font-face{
+    font-family:'Quicksand';
+    src:url('assets/fonts/Quicksand-Regular.ttf') format('truetype');
+    font-weight:400; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'Quicksand';
+    src:url('assets/fonts/Quicksand-SemiBold.ttf') format('truetype');
+    font-weight:600; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:'Quicksand';
+    src:url('assets/fonts/Quicksand-Bold.ttf') format('truetype');
+    font-weight:700; font-style:normal; font-display:swap;
+  }
+
+  :root{
+    --verde:#049F83;
+    --verde-oscuro:#007560;
+    --crema:#FBF8EF;
+    --negro:#111111;
+    --blanco:#FFFFFF;
+    --texto:#2b2b28;
+    --radio:18px;
+    --sombra:0 10px 30px rgba(0,60,50,.10);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:Helvetica, Arial, sans-serif;
+    color:var(--texto);
+    background:var(--crema);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand,button,.btn{font-family:'Quicksand', Helvetica, Arial, sans-serif;}
+  h1,h2,h3{color:var(--verde-oscuro); margin:0 0 .5em; font-weight:700;}
+  p{margin:0 0 1em;}
+  img{max-width:100%; display:block;}
+  a{color:var(--verde-oscuro);}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px;}
+  section{padding:56px 0;}
+  .center{text-align:center;}
+
+  /* Header */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,248,239,.92);
+    backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid rgba(0,0,0,.06);
+  }
+  header.site .wrap{display:flex; align-items:center; justify-content:space-between; padding-top:12px; padding-bottom:12px;}
+  header.site img{height:34px; width:auto;}
+  .header-cta{
+    background:var(--verde); color:#fff; text-decoration:none;
+    padding:10px 18px; border-radius:999px; font-weight:600; font-size:14px;
+    white-space:nowrap;
+  }
+
+  /* Hero (texto centrado, sin foto -- ver nota pendiente arriba) */
+  .hero{
+    padding:64px 0 44px;
+    background:linear-gradient(180deg, #ffffff 0%, var(--crema) 100%);
+  }
+  .hero .wrap{max-width:760px; text-align:center;}
+  .hero h1{font-size:clamp(28px,4.8vw,44px); line-height:1.2;}
+  .hero .accent{color:var(--verde);}
+  .hero p.lead{font-size:18px; color:#4b4b45; max-width:56ch; margin:0 auto 26px;}
+  .hero-secondary{
+    display:inline-block; margin-top:16px; font-family:'Quicksand'; font-weight:600;
+    color:var(--verde-oscuro); text-decoration:none; font-size:15px;
+  }
+  .hero-secondary:hover{text-decoration:underline;}
+
+  .btn{
+    display:inline-block; text-decoration:none; text-align:center;
+    background:var(--verde); color:#fff; font-weight:700; font-size:17px;
+    padding:16px 30px; border-radius:999px; border:none; cursor:pointer;
+    box-shadow:0 8px 20px rgba(4,159,131,.30);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px); box-shadow:0 10px 24px rgba(4,159,131,.38);}
+  .btn.whatsapp{background:#1DA851;}
+  .btn.whatsapp:hover{box-shadow:0 10px 24px rgba(29,168,81,.4);}
+
+  /* Trust bar */
+  .trust{background:var(--verde-oscuro); color:#fff;}
+  .trust .wrap{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding:24px 20px;
+  }
+  .trust .item{text-align:center;}
+  .trust .item strong{display:block; font-family:'Quicksand'; font-size:19px; font-weight:700;}
+  .trust .item span{font-size:13px; opacity:.85;}
+  .trust-note{font-size:11px; text-align:center; opacity:.75; padding-top:6px;}
+
+  /* Pain points */
+  .pains{background:var(--blanco);}
+  .pains h2{text-align:center; max-width:38ch; margin:0 auto .6em;}
+  .pain-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .pain-card{
+    background:var(--crema); border-radius:var(--radio); padding:20px 18px;
+    border:1px solid rgba(0,0,0,.05);
+  }
+  .pain-card .emoji{font-size:26px;}
+  .pain-card h3{font-size:16.5px; margin:10px 0 4px;}
+  .pain-card p{font-size:13.5px; color:#5a5a52; margin:0;}
+
+  /* Mecanismo */
+  .mecanismo .wrap{display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:center;}
+  .semaforos{display:flex; flex-direction:column; gap:14px; margin-top:20px;}
+  .semaforo{
+    background:var(--blanco); border-radius:14px; padding:16px 18px;
+    display:flex; gap:14px; align-items:flex-start; box-shadow:var(--sombra);
+  }
+  .semaforo .dot{
+    min-width:14px; height:14px; border-radius:50%; margin-top:6px;
+  }
+  .dot.rojo{background:#e0524a;}
+  .dot.verde{background:var(--verde);}
+  .semaforo strong{display:block; color:var(--verde-oscuro); font-family:'Quicksand'; font-size:15.5px;}
+  .semaforo p{margin:2px 0 0; font-size:14.5px; color:#5a5a52;}
+  .mecanismo-disclaimer{
+    font-size:13px; color:#7a7a72; background:var(--crema); border-radius:10px;
+    padding:12px 14px; margin-top:16px;
+  }
+
+  /* Mito vs realidad (spotlight) */
+  .mito{
+    background:var(--verde-oscuro); color:#fff;
+  }
+  .mito .wrap{max-width:760px; text-align:center;}
+  .mito h2{color:#fff;}
+  .mito blockquote{
+    font-family:'Quicksand'; font-weight:600; font-size:clamp(20px,3vw,28px);
+    line-height:1.4; margin:26px 0; font-style:normal;
+  }
+  .mito p.small{font-size:15px; opacity:.9; max-width:60ch; margin:0 auto;}
+
+  /* Confianza */
+  .confianza{background:var(--blanco);}
+  .confianza h2{text-align:center;}
+  .confianza .subhead{text-align:center; color:#6b6b63; max-width:60ch; margin:0 auto 34px;}
+  .conf-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .conf-card{background:var(--crema); border-radius:var(--radio); padding:22px;}
+  .conf-card h3{font-size:16px; margin-bottom:8px;}
+  .conf-card p{font-size:14px; color:#4b4b45; margin:0;}
+
+  /* Proceso */
+  .proceso{background:var(--crema);}
+  .proceso h2{text-align:center;}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:30px;}
+  .step{background:#fff; border-radius:var(--radio); padding:24px 20px; box-shadow:var(--sombra); position:relative;}
+  .step .num{
+    width:32px; height:32px; border-radius:50%; background:var(--verde); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:'Quicksand'; font-weight:700;
+    margin-bottom:12px;
+  }
+  .step h3{font-size:16px; margin-bottom:6px;}
+  .step p{font-size:13.5px; color:#5a5a52; margin:0;}
+
+  /* Beneficios */
+  .beneficios{background:var(--blanco);}
+  .beneficios h2{text-align:center;}
+  .ben-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:28px;
+  }
+  .ben-item{
+    display:flex; gap:12px; align-items:flex-start; background:var(--crema);
+    border-radius:14px; padding:16px;
+  }
+  .ben-item .check{
+    min-width:24px; height:24px; border-radius:50%; background:var(--verde);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:700;
+  }
+  .ben-item p{margin:0; font-size:14px; color:#3d3d38;}
+  .ben-item strong{display:block; color:var(--verde-oscuro); font-family:'Quicksand'; font-size:14.5px; margin-bottom:2px;}
+
+  /* FAQ */
+  .faq{background:#fff;}
+  .faq h2{text-align:center; margin-bottom:26px;}
+  .faq-item{border-bottom:1px solid rgba(0,0,0,.08);}
+  .faq-item summary{
+    cursor:pointer; padding:16px 6px; font-family:'Quicksand'; font-weight:600;
+    color:var(--verde-oscuro); font-size:15.5px; list-style:none; position:relative;
+    padding-right:30px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:'+'; position:absolute; right:6px; top:14px; font-size:22px; color:var(--verde);
+    transition:transform .2s ease;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{padding:0 6px 16px; font-size:14px; color:#4b4b45; margin:0; white-space:pre-line;}
+
+  /* Quiz */
+  .quiz-section{background:var(--verde); color:#fff;}
+  .quiz-section .wrap{max-width:640px;}
+  .quiz-section h2{color:#fff; text-align:center;}
+  .quiz-section > .wrap > p.lead{text-align:center; color:rgba(255,255,255,.92); max-width:50ch; margin:0 auto 30px;}
+  .quiz-card{
+    background:#fff; border-radius:var(--radio); padding:32px 28px; box-shadow:var(--sombra);
+    color:var(--texto);
+  }
+  .quiz-progress{
+    display:block; font-size:12.5px; font-weight:700; letter-spacing:.03em;
+    color:var(--verde); text-transform:uppercase; margin-bottom:10px; font-family:'Quicksand';
+  }
+  .quiz-step h3{font-size:19px; color:var(--verde-oscuro); margin-bottom:18px;}
+  .quiz-options{display:flex; flex-direction:column; gap:10px;}
+  .q-opt{
+    text-align:left; background:var(--crema); border:2px solid transparent; border-radius:12px;
+    padding:14px 16px; font-family:'Quicksand'; font-size:15px; font-weight:600; color:var(--texto);
+    cursor:pointer; transition:border-color .15s ease, background .15s ease;
+  }
+  .q-opt:hover{border-color:var(--verde); background:#f0faf7;}
+  .quiz-result{text-align:center;}
+  .quiz-result .checkmark{
+    width:56px; height:56px; border-radius:50%; background:var(--verde); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 18px;
+  }
+  .quiz-result h3{font-size:20px; color:var(--verde-oscuro);}
+  .quiz-result p{font-size:14.5px; color:#5a5a52;}
+  .quiz-back{
+    background:none; border:none; color:#9a9a90; font-size:13px; margin-top:16px;
+    cursor:pointer; text-decoration:underline; font-family:Helvetica, Arial, sans-serif;
+  }
+
+  /* Footer */
+  footer{background:var(--negro); color:#cfcfc9; font-size:12.5px;}
+  footer .wrap{padding:36px 20px 50px;}
+  footer img{height:26px; margin-bottom:14px; filter:brightness(0) invert(1); opacity:.9;}
+  footer p{max-width:80ch; color:#a9a9a2;}
+  footer .legal{border-top:1px solid rgba(255,255,255,.1); margin-top:20px; padding-top:16px; color:#7d7d77;}
+
+  @media (max-width:860px){
+    .trust .wrap{grid-template-columns:1fr; gap:14px; padding:22px 20px;}
+    .pain-grid{grid-template-columns:1fr 1fr;}
+    .mecanismo .wrap{grid-template-columns:1fr;}
+    .conf-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .ben-grid{grid-template-columns:1fr;}
+    section{padding:40px 0;}
+    .quiz-card{padding:26px 20px;}
+  }
+  @media (max-width:520px){
+    .pain-grid{grid-template-columns:1fr;}
+    .header-cta{padding:8px 14px; font-size:13px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="assets/logo-wordmark.png" alt="BIOPEPTIDES">
+    <a class="header-cta" href="#quiz">¿Soy candidato/a?</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>No es solo cuestión de voluntad <span class="accent">— y el primer paso no tiene que ser complicado.</span></h1>
+    <p class="lead">El peso también tiene un componente biológico real que pocas veces se explica. Un equipo médico evalúa tu caso completo, y todo empieza con una simple conversación.</p>
+    <a class="btn" href="#quiz">Descubre si eres candidato/a</a><br>
+    <a class="hero-secondary" href="#mecanismo">¿Por qué no es solo voluntad? ↓</a>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="item"><strong>Evaluación médica</strong><span>individual antes de cualquier recomendación</span></div>
+    <div class="item"><strong>Respaldo clínico</strong><span>estudiado en ensayos clínicos publicados y revisados por pares</span></div>
+    <div class="item"><strong>Farmacia autorizada</strong><span>dispensación bajo supervisión farmacéutica</span></div>
+  </div>
+  <p class="trust-note">Los resultados varían por persona y requieren valoración y seguimiento médico continuo.</p>
+</div>
+
+<section class="pains">
+  <div class="wrap">
+    <h2>¿Te identificas con alguna de estas ideas?</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="emoji">🍽️</div>
+        <h3>Comer menos y moverte más no fue suficiente</h3>
+        <p>Hiciste lo que se supone que funciona, y el resultado no fue el esperado.</p>
+      </div>
+      <div class="pain-card">
+        <div class="emoji">😔</div>
+        <h3>Sientes que "te falta disciplina"</h3>
+        <p>Aunque en el fondo sabes que lo has intentado en serio, más de una vez.</p>
+      </div>
+      <div class="pain-card">
+        <div class="emoji">🚪</div>
+        <h3>Te frena pensar que el proceso es complicado</h3>
+        <p>Imaginas citas largas y trámites, cuando el primer paso es mucho más simple.</p>
+      </div>
+      <div class="pain-card">
+        <div class="emoji">❓</div>
+        <h3>Te preguntas si de verdad es solo voluntad</h3>
+        <p>Y quieres una respuesta con evidencia, no otra opinión más en redes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mecanismo" id="mecanismo">
+  <div class="wrap">
+    <div>
+      <h2>¿Por qué "comer menos y moverte más" no siempre alcanza?</h2>
+      <p>Durante años se simplificó el manejo de peso a una ecuación de esfuerzo puro. Hoy se reconoce que el apetito y el metabolismo también están regulados por señales hormonales que no dependen únicamente de la voluntad.</p>
+      <p>Imagina que tu apetito y tu metabolismo están controlados por un panel de señales de tráfico dentro de tu cuerpo — una evaluación médica revisa cómo están funcionando esas señales en tu caso particular, en vez de asumir que la fórmula genérica de "come menos, muévete más" aplica igual para todos.</p>
+      <p class="mecanismo-disclaimer">No es apto para todas las personas y requiere seguimiento profesional — más abajo te explicamos cómo funciona ese proceso.</p>
+    </div>
+    <div class="semaforos">
+      <div class="semaforo">
+        <span class="dot rojo"></span>
+        <div><strong>El semáforo de la saciedad</strong><p>Le dice a tu cerebro "ya hay suficiente" y regula qué tan rápido regresa el hambre después de comer.</p></div>
+      </div>
+      <div class="semaforo">
+        <span class="dot verde"></span>
+        <div><strong>El carril del metabolismo</strong><p>Influye en cómo tu cuerpo usa la energía que consumes, más allá de cuánto comas o te muevas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mito">
+  <div class="wrap">
+    <h2>Uno de los errores más comunes</h2>
+    <blockquote>Pensar que el peso depende solo de la voluntad — y que si no ha funcionado antes, es porque "te falta disciplina".</blockquote>
+    <p class="small">La obesidad y el manejo de peso son reconocidos por organizaciones médicas internacionales como una condición con componentes biológicos reales, no solo un tema de fuerza de voluntad. Eso no invalida tus intentos anteriores — significa que puede faltar una pieza médica que una evaluación individual sí revisa. Los resultados varían por persona.</p>
+  </div>
+</section>
+
+<section class="confianza">
+  <div class="wrap">
+    <h2>Así es como te acompañamos</h2>
+    <p class="subhead">No es autorecetarte un medicamento — es un proceso con valoración médica real, pensado para que no estés solo/a en el camino.</p>
+    <div class="conf-grid">
+      <div class="conf-card">
+        <h3>🩺 Valoración médica mediante cuestionario</h3>
+        <p>Antes de iniciar, respondes un cuestionario de salud amplio que revisa un profesional — historial médico, medicamentos actuales y posibles contraindicaciones — para confirmar si eres candidato/a seguro/a.</p>
+      </div>
+      <div class="conf-card">
+        <h3>📋 Acompañamiento remoto (opcional)</h3>
+        <p>Puedes compartir tus medidas semana con semana y recibir un plan nutricional de apoyo — todo a distancia, a tu ritmo.</p>
+      </div>
+      <div class="conf-card">
+        <h3>🚚 Envío a domicilio en Chihuahua capital</h3>
+        <p>Por ahora hacemos entregas directo a tu domicilio en Chihuahua capital. Iremos sumando más ciudades próximamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proceso">
+  <div class="wrap">
+    <h2>El proceso es completo; el primer paso es solo una conversación</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Responde el mini-quiz</h3>
+        <p>4 preguntas rápidas para entender tu situación. Menos de 1 minuto — un solo paso, sin compromiso.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Hablamos por WhatsApp</h3>
+        <p>Te confirmamos precio, envío a tu domicilio y resolvemos lo puntual — ya sin vueltas.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Valoración médica</h3>
+        <p>Si decides continuar, te compartimos el cuestionario de salud completo para tu valoración antes de iniciar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="beneficios">
+  <div class="wrap">
+    <h2>Lo que confirma una evaluación médica</h2>
+    <div class="ben-grid">
+      <div class="ben-item"><span class="check">✓</span><p><strong>Que no es solo falta de voluntad</strong>Hay un componente biológico real, respaldado por evidencia clínica.</p></div>
+      <div class="ben-item"><span class="check">✓</span><p><strong>Que tus intentos anteriores contaron</strong>No haber logrado el resultado con dieta sola no dice nada sobre tu disciplina.</p></div>
+      <div class="ben-item"><span class="check">✓</span><p><strong>Que el primer paso es manejable</strong>Una conversación, no un proceso largo desde el día uno.</p></div>
+      <div class="ben-item"><span class="check">✓</span><p><strong>Que hay acompañamiento médico real</strong>No una fórmula genérica de redes sociales, sino un caso evaluado de forma individual.</p></div>
+    </div>
+    <p style="text-align:center; font-size:13px; color:#8a8a80; margin-top:22px;">Esto está respaldado por estudios clínicos revisados por profesionales de salud. Los resultados varían por persona y requieren valoración médica.</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Preguntas frecuentes</h2>
+
+    <details class="faq-item" open>
+      <summary>¿Tiene efectos secundarios? ¿Cómo los manejo si aparecen?</summary>
+      <p>Los más comunes son náuseas, fatiga leve, diarrea o estreñimiento — generalmente en las primeras 2-4 semanas de cada nueva dosis. Comer porciones pequeñas, evitar comidas grasosas y mantenerte hidratado ayuda mucho. En los estudios clínicos, menos del 5% de los participantes suspendió el tratamiento por efectos secundarios.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Necesito receta o valoración médica previa?</summary>
+      <p>Sí. Antes de iniciar respondes un cuestionario de salud amplio que revisa personal médico — no es un tratamiento que se autorice automáticamente. Está pensado para confirmar que es seguro para tu caso particular.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Funciona para cualquier persona?</summary>
+      <p>No de la misma forma para todos. En los estudios clínicos la gran mayoría de las personas respondió favorablemente, pero hay quienes no son candidatos por su historial médico. Por eso la valoración por cuestionario es un paso obligatorio antes de iniciar, no un trámite decorativo.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Tiene acompañamiento durante el tratamiento?</summary>
+      <p>Sí, de forma opcional y a distancia: puedes compartir tus medidas semana con semana y recibir un plan nutricional de apoyo. Tú decides qué tanto acompañamiento quieres además de la valoración médica inicial.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿A dónde hacen envíos y cómo llega el producto?</summary>
+      <p>Por ahora hacemos entregas a domicilio en Chihuahua capital. Coordinamos el envío directamente contigo por WhatsApp una vez confirmada tu valoración.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>¿Es segura a largo plazo? ¿Hay riesgo de cáncer de tiroides?</summary>
+      <p>La advertencia en la caja viene de estudios en ratas, que tienen una densidad de receptores hormonales en la tiroides muy distinta a la de humanos. En estudios con más de 17,000 pacientes no se ha demostrado aumento del riesgo de cáncer de tiroides en humanos. Está contraindicada en personas con antecedente personal o familiar de carcinoma medular de tiroides o síndrome MEN 2 — por eso la valoración médica previa es indispensable.</p>
+    </details>
+
+  </div>
+</section>
+
+<section class="quiz-section" id="quiz">
+  <div class="wrap">
+    <h2>¿Eres candidato/a? Descúbrelo en 1 minuto</h2>
+    <p class="lead">4 preguntas rápidas — al final te decimos el siguiente paso.</p>
+
+    <div class="quiz-card">
+      <div id="quiz-app">
+
+        <div class="quiz-step" data-step="1">
+          <span class="quiz-progress">Pregunta 1 de 4</span>
+          <h3>¿Qué es lo que más has intentado antes?</h3>
+          <div class="quiz-options">
+            <button class="q-opt" data-q="Qué ha intentado" data-v="Dietas">Dietas</button>
+            <button class="q-opt" data-q="Qué ha intentado" data-v="Ejercicio">Ejercicio</button>
+            <button class="q-opt" data-q="Qué ha intentado" data-v="Ayuno intermitente">Ayuno intermitente</button>
+            <button class="q-opt" data-q="Qué ha intentado" data-v="De todo un poco">De todo un poco</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="2" hidden>
+          <span class="quiz-progress">Pregunta 2 de 4</span>
+          <h3>¿Qué es lo que más te frustra?</h3>
+          <div class="quiz-options">
+            <button class="q-opt" data-q="Mayor frustración" data-v="Sentir que me falta disciplina">Sentir que me falta disciplina</button>
+            <button class="q-opt" data-q="Mayor frustración" data-v="No ver resultados pese al esfuerzo">No ver resultados pese al esfuerzo</button>
+            <button class="q-opt" data-q="Mayor frustración" data-v="No saber por dónde empezar">No saber por dónde empezar</button>
+            <button class="q-opt" data-q="Mayor frustración" data-v="La báscula">La báscula</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="3" hidden>
+          <span class="quiz-progress">Pregunta 3 de 4</span>
+          <h3>¿Qué buscas principalmente?</h3>
+          <div class="quiz-options">
+            <button class="q-opt" data-q="Qué busca" data-v="Entender el componente biológico">Entender el componente biológico</button>
+            <button class="q-opt" data-q="Qué busca" data-v="Un acompañamiento médico real">Un acompañamiento médico real</button>
+            <button class="q-opt" data-q="Qué busca" data-v="Saber si soy candidato/a">Saber si soy candidato/a</button>
+            <button class="q-opt" data-q="Qué busca" data-v="Un primer paso simple">Un primer paso simple</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="4" hidden>
+          <span class="quiz-progress">Pregunta 4 de 4</span>
+          <h3>¿Resides en Chihuahua capital?</h3>
+          <div class="quiz-options">
+            <button class="q-opt" data-q="Ciudad" data-v="Sí, Chihuahua capital">Sí, Chihuahua capital</button>
+            <button class="q-opt" data-q="Ciudad" data-v="No, otra ciudad">No, otra ciudad</button>
+          </div>
+        </div>
+
+        <div class="quiz-step quiz-result" data-step="result" hidden>
+          <div class="checkmark">✓</div>
+          <h3>Tu perfil coincide con quienes responden bien a este proceso</h3>
+          <p>Siguiente paso: valoración médica por WhatsApp, sin costo por la conversación inicial.</p>
+          <a id="quiz-whatsapp-btn" class="btn whatsapp" target="_blank" rel="noopener">Continuar por WhatsApp</a><br>
+          <button class="quiz-back" onclick="quizRestart()">Volver a empezar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-wordmark.png" alt="BIOPEPTIDES">
+    <p>Esta página tiene fines informativos y educativos. No constituye una consulta médica ni receta. Este programa requiere valoración y seguimiento por un profesional de la salud. Los resultados individuales varían y dependen de cada caso clínico. Si tienes alguna condición de salud preexistente, consúltalo con tu médico antes de iniciar cualquier tratamiento.</p>
+    <p class="legal">© 2026 BIOPEPTIDES. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!--
+  Referencia para el equipo: el cuestionario clinico completo (8 secciones, ya construido)
+  vive en este Google Form — compartelo por WhatsApp como paso 3 del proceso, NO esta
+  embebido en la landing a proposito (es largo, mejor como paso 2 ya con la persona interesada):
+  https://docs.google.com/forms/d/1H045y8j_fYZuQIc0KPUPo8Ow-6jadi5TJ6fJmYCD4zM/viewform
+
+  El nombre especifico del protocolo/molecula se conversa en WhatsApp, no en esta pagina
+  (ver knowledge-base/META_POLICY.md — no se nombra el farmaco en el anuncio ni en la
+  landing a la que apunta el anuncio).
+-->
+<script>
+  var WHATSAPP_NUMBER = '526141014200';
+
+  var quizAnswers = {};
+  var quizSteps = ['1','2','3','4','result'];
+  var quizIndex = 0;
+
+  document.querySelectorAll('.q-opt').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      quizAnswers[btn.dataset.q] = btn.dataset.v;
+      quizIndex++;
+      showQuizStep(quizSteps[quizIndex]);
+      if (quizSteps[quizIndex] === 'result') {
+        buildWhatsappLink();
+        if (window.fbq) { fbq('track', 'Lead'); }
+      }
+    });
+  });
+
+  function showQuizStep(step){
+    document.querySelectorAll('.quiz-step').forEach(function(el){
+      el.hidden = el.dataset.step !== step;
+    });
+  }
+
+  function quizRestart(){
+    quizAnswers = {};
+    quizIndex = 0;
+    showQuizStep('1');
+  }
+
+  function buildWhatsappLink(){
+    var msg = 'Hola, hice el mini-quiz de la página (campaña B3):\n' +
+      '- Ya intenté: ' + quizAnswers['Qué ha intentado'] + '\n' +
+      '- Lo que más me frustra: ' + quizAnswers['Mayor frustración'] + '\n' +
+      '- Lo que busco: ' + quizAnswers['Qué busca'] + '\n' +
+      '- Ciudad: ' + quizAnswers['Ciudad'] + '\n' +
+      'Quiero saber si soy candidato/a al programa, precio y envío.';
+    var link = document.getElementById('quiz-whatsapp-btn');
+    link.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
+  }
+</script>
+
+</body>
+</html>
